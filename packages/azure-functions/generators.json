@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "azure-functions",
+  "version": "0.0.1",
+  "generators": {
+    "azure-functions": {
+      "factory": "./src/generators/azure-functions/generator",
+      "schema": "./src/generators/azure-functions/schema.json",
+      "description": "azure-functions generator"
+    }
+  }
+}

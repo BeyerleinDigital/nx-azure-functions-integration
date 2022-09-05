@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "azure-functions": "packages/azure-functions",
+    "azure-functions-e2e": "e2e/azure-functions-e2e"
+  }
+}
