@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test"
+    "build": "nx build azure-functions",
+    "lint": "nx lint azure-functions"
   },
   "private": true,
   "devDependencies": {
