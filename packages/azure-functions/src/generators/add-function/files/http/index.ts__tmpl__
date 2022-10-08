@@ -1,0 +1,7 @@
+import { AzureFunction, Context, HttpRequest } from '@azure/functions';
+
+const httpTrigger: AzureFunction = async function (ctx: Context, req: HttpRequest): Promise<void> {
+  // do something awesome here
+};
+
+export default httpTrigger;

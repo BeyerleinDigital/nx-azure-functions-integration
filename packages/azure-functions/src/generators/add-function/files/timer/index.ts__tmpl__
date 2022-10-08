@@ -1,0 +1,7 @@
+import { AzureFunction, Context } from '@azure/functions';
+
+const timerTrigger: AzureFunction = async function (ctx: Context, timer: unknown): Promise<void> {
+  // do something awesome here
+};
+
+export default timerTrigger;

@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "type": "queueTrigger",
+      "direction": "in",
+      "name": "myQueueItem",
+      "queueName": "myqueue-items",
+      "connection": "MyStorageConnectionAppSetting"
+    }
+  ],
+  "scriptFile": "<%= offsetFromRoot %>dist/apps/<%= projectName %>/<%= functionName %>/index.mjs"
+}

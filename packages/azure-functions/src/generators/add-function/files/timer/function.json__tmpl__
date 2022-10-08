@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "schedule": "0 */5 * * * *",
+      "name": "timer",
+      "type": "timerTrigger",
+      "direction": "in"
+    }
+  ],
+  "scriptFile": "<%= offsetFromRoot %>dist/apps/<%= projectName %>/<%= functionName %>/index.mjs"
+}
