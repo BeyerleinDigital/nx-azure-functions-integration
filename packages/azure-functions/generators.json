@@ -3,10 +3,10 @@
   "name": "azure-functions",
   "version": "0.0.1",
   "generators": {
-    "azure-functions": {
-      "factory": "./src/generators/azure-functions/generator",
-      "schema": "./src/generators/azure-functions/schema.json",
-      "description": "azure-functions generator"
+    "create-project": {
+      "factory": "./src/generators/create-project/generator",
+      "schema": "./src/generators/create-project/schema.json",
+      "description": "Generate an Azure Functions project."
     }
   }
 }
