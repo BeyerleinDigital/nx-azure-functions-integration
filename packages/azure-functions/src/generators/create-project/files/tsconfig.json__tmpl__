@@ -1,0 +1,11 @@
+{
+  "extends": "<%= offsetFromRoot %>tsconfig.base.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "lib": ["DOM", "ES2021"],
+    "importHelpers": true
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["./**/*.spec.ts"]
+}
