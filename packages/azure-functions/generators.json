@@ -7,6 +7,11 @@
       "factory": "./src/generators/create-project/generator",
       "schema": "./src/generators/create-project/schema.json",
       "description": "Generate an Azure Functions project."
+    },
+    "add-function": {
+      "factory": "./src/generators/add-function/generator",
+      "schema": "./src/generators/add-function/schema.json",
+      "description": "Add an Azure Function to an Azure Function project."
     }
   }
 }

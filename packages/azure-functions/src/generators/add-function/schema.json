@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "AddFunction",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Function App name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "project": {
+      "type": "string",
+      "description": "Project"
+    },
+    "type": {
+      "type": "string",
+      "description": "Trigger type",
+      "enum": ["http", "timer", "queue"],
+      "$default": "http"
+    }
+  },
+  "required": ["project", "name"]
+}
