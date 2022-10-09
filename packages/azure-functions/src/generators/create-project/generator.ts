@@ -75,10 +75,10 @@ function addProjectConfig(tree: Tree, normalizedOptions: NormalizedSchema) {
     sourceRoot: `${normalizedOptions.projectRoot}`,
     targets: {
       build: {
-        executor: '@beyerleinf/nx-azure-functions:build',
+        executor: '@beyerlein/nx-azure-functions:build',
       },
       serve: {
-        executor: '@beyerleinf/nx-azure-functions:serve',
+        executor: '@beyerlein/nx-azure-functions:serve',
       },
     },
     tags: normalizedOptions.parsedTags,
