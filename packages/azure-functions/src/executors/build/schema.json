@@ -4,6 +4,13 @@
   "title": "Build executor",
   "description": "",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "logLevel": {
+      "type": "string",
+      "description": "Builder log level",
+      "enum": ["verbose", "info", "warn", "error", "off"],
+      "$default": "verbose"
+    }
+  },
   "required": []
 }
