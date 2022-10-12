@@ -5,6 +5,11 @@
       "implementation": "./src/executors/build/executor",
       "schema": "./src/executors/build/schema.json",
       "description": "build executor"
+    },
+    "pack": {
+      "implementation": "./src/executors/pack/executor",
+      "schema": "./src/executors/pack/schema.json",
+      "description": "pack executor"
     }
   }
 }
