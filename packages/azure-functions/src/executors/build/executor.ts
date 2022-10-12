@@ -3,10 +3,7 @@ import { build } from 'esbuild-azure-functions';
 import * as path from 'path';
 import { BuildExecutorSchema } from './schema';
 
-export default async function runExecutor(
-  options: BuildExecutorSchema,
-  ctx: ExecutorContext
-) {
+export default async function runExecutor(options: BuildExecutorSchema, ctx: ExecutorContext) {
   let success = true;
 
   const nxProject = ctx.workspace.projects[ctx.projectName];

@@ -21,19 +21,12 @@ interface NormalizedSchema extends AzureFunctionsGeneratorSchema {
   parsedTags: string[];
 }
 
-function normalizeOptions(
-  tree: Tree,
-  options: AzureFunctionsGeneratorSchema
-): NormalizedSchema {
+function normalizeOptions(tree: Tree, options: AzureFunctionsGeneratorSchema): NormalizedSchema {
   const name = names(options.name).fileName;
-  const projectDirectory = options.directory
-    ? `${names(options.directory).fileName}/${name}`
-    : name;
+  const projectDirectory = options.directory ? `${names(options.directory).fileName}/${name}` : name;
   const projectName = projectDirectory.replace(new RegExp('/', 'g'), '-');
   const projectRoot = `${getWorkspaceLayout(tree).appsDir}/${projectDirectory}`;
-  const parsedTags = options.tags
-    ? options.tags.split(',').map((s) => s.trim())
-    : [];
+  const parsedTags = options.tags ? options.tags.split(',').map(s => s.trim()) : [];
 
   return {
     ...options,
@@ -52,20 +45,11 @@ function addFiles(tree: Tree, options: NormalizedSchema) {
     tmpl: '',
   };
 
-  generateFiles(
-    tree,
-    path.join(__dirname, 'files'),
-    options.projectRoot,
-    templateOptions
-  );
+  generateFiles(tree, path.join(__dirname, 'files'), options.projectRoot, templateOptions);
 }
 
 function addDependencies(tree: Tree) {
-  addDependenciesToPackageJson(
-    tree,
-    {},
-    { '@azure/functions': '3.0.0', typescript: '4' }
-  );
+  addDependenciesToPackageJson(tree, {}, { '@azure/functions': '3.0.0', typescript: '4' });
 }
 
 function addProjectConfig(tree: Tree, normalizedOptions: NormalizedSchema) {
@@ -79,6 +63,9 @@ function addProjectConfig(tree: Tree, normalizedOptions: NormalizedSchema) {
       },
       serve: {
         executor: '@beyerlein/nx-azure-functions:serve',
+      },
+      pack: {
+        executor: '@beyerlein/nx-azure-functions:pack',
       },
     },
     tags: normalizedOptions.parsedTags,
@@ -107,10 +94,7 @@ async function addJest(tree: Tree, normalizedOptions: NormalizedSchema) {
   });
 }
 
-export default async function (
-  tree: Tree,
-  options: AzureFunctionsGeneratorSchema
-) {
+export default async function (tree: Tree, options: AzureFunctionsGeneratorSchema) {
   const normalizedOptions = normalizeOptions(tree, options);
 
   addDependencies(tree);
