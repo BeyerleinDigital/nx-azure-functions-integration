@@ -37,6 +37,6 @@
   "dependencies": {
     "@swc/helpers": "~0.4.11",
     "esbuild-azure-functions": "^1.2.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.4.1"
   }
 }
