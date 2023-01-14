@@ -3,7 +3,8 @@ import { eachValueFrom } from '@nrwl/devkit/src/utils/rxjs-for-await';
 import * as child_process from 'child_process';
 import { build, BuilderConfigType, watch } from 'esbuild-azure-functions';
 import * as path from 'path';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ServeExecutorSchema } from './schema';
 
 export default async function* runExecutor(
