@@ -5,9 +5,9 @@ on:
       - '**'
     tags-ignore:
       - 'v*'
-    pull_request:
-      branches:
-        - 'main'
+  pull_request:
+    branches:
+      - 'main'
 
 jobs:
   build:
@@ -18,18 +18,13 @@ jobs:
         node-version: [14.x, 15.x, 16.x, 17.x, 18.x]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm cache
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
       - run: npm ci
       - run: npm run build
       - run: npm run lint
